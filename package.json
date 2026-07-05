@@ -1,0 +1,30 @@
+{
+  "name": "test_automation_rabelani_express",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Playwright Test automation project for Rabelani Express",
+  "main": "index.js",
+  "scripts": {
+    "test:dev": "cross-env NODE_ENV=dev npx playwright test",
+    "test:dev:headed": "cross-env NODE_ENV=dev npx playwright test --headed",
+    "test:staging": "cross-env NODE_ENV=staging npx playwright test",
+    "test:staging:headed": "cross-env NODE_ENV=staging npx playwright test --headed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MT-Mathabathe/Test_Automation_Rabelani_Express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MT-Mathabathe/Test_Automation_Rabelani_Express/issues"
+  },
+  "homepage": "https://github.com/MT-Mathabathe/Test_Automation_Rabelani_Express#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.0.1",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.4.2"
+  }
+}
