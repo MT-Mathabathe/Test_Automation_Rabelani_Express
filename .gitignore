@@ -1,0 +1,35 @@
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Dependencies
+node_modules/
+venv/
+env/
+/vendor
+
+# Build and log files
+dist/
+build/
+*.log
+npm-debug.log*
+
+# OS specific files/ System files
+.DS_Store
+Thumbs.db
+
+# Ignore environment configuration secrets
+config/dev.env.js
+config/staging.env.js
+config/production.env.js
