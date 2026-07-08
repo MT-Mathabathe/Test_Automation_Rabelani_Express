@@ -15,7 +15,6 @@
 
 # Dependencies
 node_modules/
-package-lock.json
 venv/
 env/
 /vendor
@@ -29,3 +28,8 @@ npm-debug.log*
 # OS specific files/ System files
 .DS_Store
 Thumbs.db
+
+# Ignore environment configuration secrets
+config/dev.env.js
+config/staging.env.js
+config/production.env.js

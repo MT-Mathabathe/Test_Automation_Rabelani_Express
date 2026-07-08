@@ -14,7 +14,7 @@ export async function login(page, shouldSkipTour = true) {
 
   // 3. Click the login/submit button
   // Adjust 'Sign In' text to match the exact text on the Rabelani Express button
-  await page.getByRole('button', { name: 'Sign In', exact: true }).click();
+  await page.getByRole('button', { name: 'Sign in' }).click();
 
   // 4. Assert that the login was successful by checking the resulting URL
   // (e.g., verifying that the browser redirected to the dashboard)
@@ -99,4 +99,26 @@ export async function login(page, shouldSkipTour = true) {
   }
     
     await expect(page).toHaveURL(/.*dashboard/);
+}
+
+// ADDED 'shouldSkipTour = true' as a setting here. It defaults to skipping!
+export async function newLogin(page, shouldSkipTour = true) {
+  // 1. Navigate to the login page using the URL from your .env file
+  //Wait until the HTML is loaded, don't wait for heavy external resources
+  await page.goto('/', { waitUntil: 'commit' });
+
+  // 2. Locate the input fields and enter the secret credentials
+  await page.getByRole('textbox', { name: 'Email Address' }).click();
+  await page.getByRole('textbox', { name: 'Email Address' }).fill(process.env.TEST_USER_EMAIL);
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).fill(process.env.TEST_USER_PASSWORD);
+
+  // 3. Click the login/submit button
+  // Adjust 'Sign In' text to match the exact text on the Rabelani Express button
+  await page.getByRole('button', { name: 'Sign in' }).click();
+
+  // 4. Assert that the login was successful by checking the resulting URL
+  // (e.g., verifying that the browser redirected to the dashboard)
+  await expect(page).toHaveURL(/.*dashboard/);
+
 }
